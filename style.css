@@ -1,17 +1,23 @@
 body {
     background-color: #393838;
+    touch-action: manipulation;
 }
 button {
-    max-width: 75px;
     width:10%;
     border: 1px solid #393838;
+    background-color: #818384;
+    color: white;
     aspect-ratio: 1 / 1;
     transition-duration: 0.4s;
+    vertical-align: middle;
+    font-family: Arial, sans-serif;
+    font-size: 3vw;
 }
 
 #keyboard {
     display: grid;
-    width:100%;
+    /*max-width: 500px;*/
+    width:95%; 
     padding: inherit;
     position: absolute;
     bottom: 2%;
@@ -26,6 +32,13 @@ button {
     left: 50%;
     transform: translate(-50%, 0%);
 }
+
+.score {
+    font-family: Arial, sans-serif;
+    font-size: 3vw;
+    color: white; 
+}
+
 .button-container {
     display: flex;
     justify-content: center;
@@ -35,7 +48,6 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .center {
@@ -55,6 +67,7 @@ button {
     font-family: Arial, sans-serif;
     font-size: 3vw;
     display: table-cell;  
+    color: white;
 }
 .selected {
     border: 1px solid white;
@@ -69,7 +82,7 @@ button {
 .incorrect {
     background-color: #0f0f0f;
 }
-button.correct:hover {
+/*button.correct:hover {
     background-color: #00d704;
 }
 button.almost:hover {
@@ -77,4 +90,4 @@ button.almost:hover {
 }
 button.incorrect:hover {
     background-color: #363636;
-}
+}*/

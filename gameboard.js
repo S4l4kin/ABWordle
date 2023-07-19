@@ -14,7 +14,7 @@ const gameboard = {
         keyboard.createKeyboard();
     },
 
-    addNewRow: function(){
+addNewRow: function(){
         this.wordRow++
         let parentDiv = document.getElementById("lineList");
         let containerDiv = document.createElement("div");
@@ -23,6 +23,7 @@ const gameboard = {
         parentDiv.append(containerDiv);
     
         let score = document.createElement("div");
+        score.setAttribute("class", "score");
         score.innerHTML = this.wordRow;
         containerDiv.append(score);
         for(let i = 0; i < word.length; i++){
@@ -40,7 +41,7 @@ const gameboard = {
 
         parentDiv.scrollTo(0, parentDiv.scrollHeight);
     },
-    removeRow: function(){
+removeRow: function(){
     let selector = '[row="'+this.wordRow+'"]';
     let selectedCollection = document.querySelector(selector);
     selectedCollection.remove();
@@ -67,7 +68,7 @@ const gameboard = {
     this.letterPos++;
 },
 
-    checkBoard: function(word, current){
+checkBoard: function(word, current){
         var letterAmount = {};
         word.toUpperCase().split("").forEach(function(item, index){
             if(!(item in letterAmount))
