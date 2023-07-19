@@ -1,3 +1,9 @@
+@property --color {
+    syntax: '<color>'; /* <- defined as type number for the transition to work */
+    initial-value: #393838;
+    inherits: false;
+  }
+
 body {
     background-color: #393838;
     touch-action: manipulation;
@@ -56,6 +62,7 @@ button {
 .box{
     width: 100px;
     aspect-ratio: 1 / 1;
+    position: relative;
     border: 1px solid black;
     display: table; 
     margin: 10px;
@@ -72,22 +79,22 @@ button {
 .selected {
     border: 1px solid white;
 }
-
 .correct {
-    background-color: #00b804;
+    --color: #00b804;
 }
 .almost {
-    background-color: #efe700;
+    --color: #efe700;
 }
 .incorrect {
+    --color: #0f0f0f;
+}
+
+button.correct {
+    background-color: #00b804;
+}
+button.almost {
+    background-color: #efe700;
+}
+button.incorrect {
     background-color: #0f0f0f;
 }
-/*button.correct:hover {
-    background-color: #00d704;
-}
-button.almost:hover {
-    background-color: #efe949;
-}
-button.incorrect:hover {
-    background-color: #363636;
-}*/

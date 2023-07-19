@@ -1,0 +1,35 @@
+@keyframes bounce {
+    0%  {bottom: 0vh; background-color: var(--color);}
+    50% {bottom: 1vh;}
+    100% {bottom: 0vh; background-color: #393838;}
+}
+
+@keyframes rotate {
+    0%  {rotate: 0deg; background-color: var(--color);}
+    100% {rotate: -360deg; background-color: #393838;}
+}
+
+@keyframes flip {
+    0%  {scale: 1 1; background-color: var(--color);}
+    50% {scale: 0 1; background-color: #393838;}
+    100% {scale: 1 1};
+}
+
+.bounce {
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+.rotate {
+    animation-name: rotate;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+.flip {
+    animation-name: flip;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}

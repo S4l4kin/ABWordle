@@ -31,6 +31,7 @@ addNewRow: function(){
         boxDiv.setAttribute("class", "box");
         boxDiv.setAttribute("row", this.wordRow);
         boxDiv.setAttribute("pos", i);
+        boxDiv.setAttribute("style", "animation-delay:"+(i/16)+"s;" )
     
         let letter = document.createElement("p");
         letter.setAttribute("class", "letter");
@@ -103,7 +104,17 @@ checkBoard: function(word, current){
                 box.classList.add("incorrect");
             }
         }
-        keyboard.updateKeyboard(word, current);
+
+        //Animate the letters
+        const animationList = ["bounce", "rotate", "flip"];
+        const animation = animationList[Math.floor(Math.random() * animationList.length)];
+        for(let i = 0; i < word.length; i++){
+            let selector = '[row="'+this.wordRow+'"][pos="'+i+'"]';
+            let box = document.querySelector(selector);
+            
+            box.classList.add(animation);
+        }
+            keyboard.updateKeyboard(word, current);
     },
 newline: function(){
   this.letterPos = 0;
