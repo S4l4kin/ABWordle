@@ -8,7 +8,7 @@
     --almost : #efe700;
     --incorrect : #0f0f0f;
     --background-color : #393838;
-    --box-font-size : 5vw;
+    --font-size : 5vw;
 }
 
 body {
@@ -37,6 +37,7 @@ button {
 }
 #lineList {
     height:65%;
+    width:95%;
     overflow: auto;
     position: absolute;
     top:2%;
@@ -46,7 +47,7 @@ button {
 
 .score {
     font-family: Arial, sans-serif;
-    font-size: 3vw;
+    font-size: var(--font-size);
     color: white; 
 }
 
