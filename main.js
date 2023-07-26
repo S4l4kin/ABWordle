@@ -6,7 +6,6 @@ window.onload = function() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     word = atob(urlParams.get('word'));
-    console.log(word);
     gameboard.createBoard();
     gameboard.resize();
 };
@@ -43,10 +42,8 @@ function addLetter(value){
   
   function checkWord(){
     if (current.length < word.length){
-      console.log("too short");
       return;
     }
-    console.log("checkword");
   
     //Checking Logic
     var correct = 0;
@@ -62,7 +59,7 @@ function addLetter(value){
     //Check if won
     let victory = false;
     if(correct == word.length){
-      alert("YOU WON");
+      setTimeout(() => {  alert("YOU WON\nThe right word was: " + word.toUpperCase()); }, (word.length/16)*1000+600);
       victory = true;
     }
     //Start a new line

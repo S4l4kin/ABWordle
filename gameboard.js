@@ -89,7 +89,6 @@ checkBoard: function(word, current){
         for(let i = 0; i < word.length; i++){
             let selector = '[row="'+this.wordRow+'"][pos="'+i+'"]';
             let box = document.querySelector(selector);
-            console.log(box.getAttribute("class").includes("correct"));
             if(word.toUpperCase().includes(current.toUpperCase()[i]) && letterAmount[current.toUpperCase()[i]] > 0 && !box.getAttribute("class").includes("correct")){
             
             box.classList.add("almost");
