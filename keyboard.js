@@ -10,6 +10,9 @@ const keyboard = {
             item.forEach(function(item){
                 let btn = document.createElement("button");
                 btn.innerHTML = item;
+               
+                btn.setAttribute("onresize","keyboard.resizeLetter()")
+
                 btn.addEventListener("click", function(){
                     if(item == "Enter")
                         checkWord();
@@ -37,6 +40,17 @@ const keyboard = {
                 btn.classList.add("incorrect");
             }
         }
+    },
+    resizeLetter: function(){
+        this.layout.forEach(function (item) {
+            item.forEach(function(item){
+                let btn = keyboard.dir[item]
+                let fontSize = btn.clientWidth/2;
+                if(item == "Enter")
+                    fontSize = btn.clientWidth/3;
+                btn.setAttribute("style","font-size:"+fontSize+"px");
+            });
+        });
     }
 
 }

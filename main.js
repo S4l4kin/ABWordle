@@ -8,6 +8,7 @@ window.onload = function() {
     word = atob(urlParams.get('word'));
     console.log(word);
     gameboard.createBoard();
+    gameboard.resize();
 };
 
 function encrypt(word){
@@ -17,7 +18,7 @@ function encrypt(word){
 
 document.addEventListener('keydown', function(event) {
   if(event.keyCode == 13) {
-    checkWord("T");
+    checkWord();
   } else if(event.keyCode == 8){
     removeLetter();
   } else if(event.keyCode <= 90 && event.keyCode >= 65){

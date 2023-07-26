@@ -135,5 +135,11 @@ newline: function(){
     if (item.className.includes("box"))
       item.classList.add("selected");
     });
+},
+resize: function (){
+    const boxes = document.getElementsByClassName("box")[0];
+    let fontSize = boxes.clientWidth/2;
+    document.querySelector(":root").style.setProperty("--font-size", fontSize+"px");
+    keyboard.resizeLetter();
 }
 }

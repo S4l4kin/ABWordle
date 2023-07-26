@@ -5,11 +5,14 @@
         <script language="javascript" type="text/javascript" src="main.js"></script>
         <script language="javascript" type="text/javascript" src="gameboard.js"></script>
         <script language="javascript" type="text/javascript" src="keyboard.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="animation.css">
       </head>
+      <body onresize="gameboard.resize()">
       <div id="lineList" class="center"></div>
       
       <div id="keyboard" class="center"></div>
+    </body>
 
 </html>
