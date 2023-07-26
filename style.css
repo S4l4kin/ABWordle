@@ -22,7 +22,7 @@ button {
 
 #keyboard {
     display: grid;
-    /*max-width: 500px;*/
+    max-width: 500px;
     width:95%; 
     padding: inherit;
     position: absolute;
